@@ -1,1 +1,14 @@
 Part,Value/Part#,Qty,Notes
+Op-amp,TL072CP,1,Dual JFET DIP-8 - circuits 1-4
+Op-amp,LM358P,1,Dual single-supply DIP-8 - circuit 5
+IC socket,DIP-8,2,-
+Resistor,1kOhm,1,Test input divider top
+Resistor,8.2kOhm,1,Test input divider bottom
+Resistor,10kOhm,4,R_in circuits 1-2; threshold divider circuit 5 (x2)
+Resistor,47kOhm,2,R_f circuits 1-2
+Resistor,1.5kOhm,2,R1 R2 Sallen-Key circuit 4
+Resistor,330Ohm,1,LED current limit circuit 5
+Capacitor,0.1uF ceramic,2,C1 C2 Sallen-Key circuit 4
+LED,5mm red,1,Comparator indicator circuit 5
+Battery,9V,2,Split +/-9V rail circuits 1-4
+Battery snap connector,9V bare-wire leads,2,-
