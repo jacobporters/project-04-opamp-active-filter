@@ -8,13 +8,12 @@ COMPLETE ✅
 Goal: Build and verify five foundational op-amp circuits using the TL072CP (JFET, dual-rail) and LM358P (single-supply) — inverting amp, non-inverting amp, voltage follower, a 2nd-order Sallen-Key low-pass filter, and a comparator. Each circuit was simulated in LTSpice before breadboarding, then verified with a multimeter and the FNIRSI 2C53T oscilloscope/signal generator.
 
 I learned:
-- "104" on a ceramic cap is the EIA three-digit code (10 × 10⁴ pF = 0.1µF), not 104pF — caught this before it became a wiring mistake.
 - TL072CP/LM358P are dual op-amps: pin 6 is op-amp B's inverting *input*, not an output. Mixed up op-amp A and B pins early on.
 - Voltage divider orientation: the resistor to GND sets the midpoint voltage, not the resistor to V+. Got this backwards once on circuit 1 and chased a phantom saturation bug for several measurements before catching it.
-- Electrolytic capacitors are unsuitable for AC signal paths — swapped for ceramics in the Sallen-Key filter after seeing a sharp resonant peak/notch instead of a clean rolloff.
+- Electrolytic capacitors are unsuitable for AC signal paths: swapped for ceramics in the Sallen-Key filter after seeing a sharp resonant peak/notch instead of a clean rolloff.
 - For a unity-gain, equal-R/equal-C Sallen-Key filter, the measured −3dB point is the calculated pole frequency × 0.6436 (Butterworth response correction), not the pole frequency itself.
-- A floating comparator input picks up ambient noise and switches unpredictably — always drive both inputs with a defined voltage.
-- Batteries read 9.5V fresh, not 9V — explains the small (~5-7%) gaps between calculated and measured gains throughout.
+- A floating comparator input picks up ambient noise and switches unpredictably; always drive both inputs with a defined voltage.
+- Batteries read 9.5V fresh, not 9V—explains the small (~5-7%) gaps between calculated and measured gains throughout.
 
 Circuits:
 | # | Configuration | IC | Spec (calc) | Measured |
